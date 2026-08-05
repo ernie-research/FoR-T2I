@@ -48,18 +48,36 @@ img {
 }
 
 .brand {
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex: 0 0 auto;
   width: clamp(180px, 22vw, 260px);
   aspect-ratio: 2 / 1;
   text-decoration: none;
+  isolation: isolate;
+}
+
+.brand::before {
+  position: absolute;
+  inset: -18px -26px;
+  z-index: -1;
+  content: "";
+  background:
+    radial-gradient(ellipse at center, rgba(244, 245, 241, 0.95) 0%, rgba(244, 245, 241, 0.76) 42%, rgba(244, 245, 241, 0) 74%),
+    radial-gradient(ellipse at center, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0) 66%);
+  filter: blur(13px);
+  pointer-events: none;
 }
 
 .brand img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: drop-shadow(0 12px 26px rgba(24, 31, 38, 0.1));
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 58%, rgba(0, 0, 0, 0.72) 78%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, #000 58%, rgba(0, 0, 0, 0.72) 78%, transparent 100%);
 }
 
 nav {
@@ -229,6 +247,12 @@ h1 {
   width: 24px;
   height: 24px;
   flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.resource-pill .arxiv-icon {
+  width: 44px;
+  height: 20px;
 }
 
 .resource-pill span {
@@ -491,6 +515,12 @@ h2 {
   width: 44px;
   height: 44px;
   flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.resource-card .arxiv-icon {
+  width: 78px;
+  height: 36px;
 }
 
 .resource-card strong {
