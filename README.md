@@ -101,6 +101,10 @@ Expected generation-result rows follow this format:
 
 `prompt_kind` must be either `FoR` or `Cam`; each benchmark item should have one generated image for each prompt kind.
 
+## Training-free Mitigation
+
+The code for our proposed training-free VLM-gated mitigation method will be released in the next few days. Please stay tuned. 🚀
+
 ## Limitations
 
 FoR-T2I is intended for evaluation, not training. Automatic scores depend on the selected detector, segmentation model, depth model, and VLM judge. Published results should report all generation and evaluation settings.
