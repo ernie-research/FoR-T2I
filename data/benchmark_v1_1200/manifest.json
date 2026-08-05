@@ -1,0 +1,83 @@
+{
+  "benchmark": "FoR-T2I",
+  "split": "v1_balanced_1200",
+  "generation_rule": "FoR-T2I v1 benchmark split with 1,200 examples balanced across L1, L2, and L3.",
+  "rows": 1200,
+  "unique_ids": 1200,
+  "levels": {
+    "L3": 400,
+    "L2": 400,
+    "L1": 400
+  },
+  "camera_views": {
+    "eye_level": 597,
+    "top_down": 603
+  },
+  "layout_families": {
+    "orientation_link": 400,
+    "multi_relation": 400,
+    "single_anchor": 400
+  },
+  "files": {
+    "prompts_jsonl": "FoR-T2I_1200_prompts.jsonl"
+  },
+  "sha256": {
+    "FoR-T2I_1200_prompts.jsonl": "da48515f8eeb1fde5724fe65aca49cd5c0ad947a79f367b7407f4920356cc735"
+  },
+  "leak_scan_needles": [],
+  "eval_ready_schema_keys": [
+    "id",
+    "sample_index",
+    "level",
+    "conversion_level",
+    "layout_family",
+    "camera_view",
+    "camera_viewpoint",
+    "prompt_mode",
+    "scene_slice",
+    "scene_context",
+    "FoR_prompt",
+    "Cam_prompt",
+    "original_FoR_prompt",
+    "original_Cam_prompt",
+    "layout",
+    "layout_result",
+    "layout_signature",
+    "construction",
+    "objects",
+    "target_anchor_relation",
+    "target_image_relation",
+    "relationship_family",
+    "relation",
+    "object_orientation",
+    "orientation_rule",
+    "anchor_category",
+    "benchmark",
+    "split",
+    "license_note"
+  ],
+  "source_provenance": "FoR-T2I v1 benchmark split.",
+  "coordinate_system": {
+    "width": 256,
+    "height": 256,
+    "rescaled_from": {
+      "width": 1000,
+      "height": 1000
+    },
+    "scale_factor": 0.256,
+    "scaled_fields": [
+      "map.width",
+      "map.height",
+      "objects[].x",
+      "objects[].y",
+      "relations[].delta.dx",
+      "relations[].delta.dy",
+      "relations[].anchor_view.scores.front",
+      "relations[].anchor_view.scores.left"
+    ],
+    "unscaled_direction_fields": [
+      "relations[].anchor_view.forward_vector",
+      "relations[].anchor_view.left_vector"
+    ]
+  }
+}
