@@ -1,0 +1,128 @@
+{
+  "id": "FoR-T2I-v1-000794",
+  "source_generation_id": "SFB-calibrated-layout-000794",
+  "level": "L2",
+  "model": "doubao-seedream-5-0-260128",
+  "prompt": "Create an eye-level scene. A skunk is present, facing image-right. A frog is present. The frog is behind skunk, opposite skunk's own facing direction. A chicken is present. A chicken is placed near the top of the image, using the viewer's image frame. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.",
+  "prompt_exact_match_to_official_1200": true,
+  "image_size": [
+    2048,
+    2048
+  ],
+  "all_detected": true,
+  "layout": {
+    "camera_view": "eye_level",
+    "layout_family": "multi_relation",
+    "relations": [
+      {
+        "anchor": "skunk",
+        "target": "frog",
+        "expected": "anchor_back",
+        "predicted": [
+          "anchor_back",
+          "anchor_down"
+        ],
+        "ok": true
+      },
+      {
+        "anchor": "skunk",
+        "target": "chicken",
+        "expected": [
+          "image_top"
+        ],
+        "predicted": [
+          "anchor_back",
+          "anchor_up"
+        ],
+        "ok": true
+      }
+    ]
+  },
+  "detections": {
+    "skunk": {
+      "source": "owl",
+      "score": 0.3522788882255554,
+      "box_xyxy": [
+        683.3858642578125,
+        959.3890991210938,
+        1635.4644775390625,
+        1347.9493408203125
+      ]
+    },
+    "frog": {
+      "source": "owl",
+      "score": 0.29052382707595825,
+      "box_xyxy": [
+        251.5096435546875,
+        1150.075927734375,
+        550.08984375,
+        1305.40087890625
+      ]
+    },
+    "chicken": {
+      "source": "owl",
+      "score": 0.466785192489624,
+      "box_xyxy": [
+        886.5270385742188,
+        309.0177307128906,
+        1126.6820068359375,
+        686.923828125
+      ]
+    }
+  },
+  "sam": {
+    "role": "fallback for labels missed by OWL-ViT",
+    "triggered": false,
+    "detections": {},
+    "mask_note": "SAM fallback was not invoked because OWL-ViT detected every required label."
+  },
+  "depth": {
+    "is_metric": true,
+    "scale_factor": 3.437910795211792,
+    "shape": [
+      2048,
+      2048
+    ],
+    "dtype": "float32",
+    "visualization_p02": 2.2274620819091795,
+    "visualization_p98": 8.899714183807372,
+    "object_depths": {
+      "skunk": {
+        "center": [
+          1159.4251708984375,
+          1153.6692199707031
+        ],
+        "center_depth": 2.949226140975952,
+        "depth_min": 2.908940076828003,
+        "depth_max": 3.6832151412963867,
+        "depth_mean": 3.1173007488250732,
+        "depth_median": 2.997931718826294,
+        "valid_depth_pixels": 370717
+      },
+      "frog": {
+        "center": [
+          400.79974365234375,
+          1227.7384033203125
+        ],
+        "center_depth": 2.9992332458496094,
+        "depth_min": 2.9875526428222656,
+        "depth_max": 3.3146400451660156,
+        "depth_mean": 3.0927624702453613,
+        "depth_median": 3.060028076171875,
+        "valid_depth_pixels": 46800
+      },
+      "chicken": {
+        "center": [
+          1006.6045227050781,
+          497.9707794189453
+        ],
+        "center_depth": 4.4012298583984375,
+        "depth_min": 4.387302875518799,
+        "depth_max": 6.442510604858398,
+        "depth_mean": 4.939248085021973,
+        "depth_median": 4.5537190437316895,
+        "valid_depth_pixels": 91098
+      }
+    }
+  }
+}

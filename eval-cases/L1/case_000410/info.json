@@ -1,0 +1,95 @@
+{
+  "id": "FoR-T2I-v1-000410",
+  "source_generation_id": "SFB-calibrated-layout-000410",
+  "level": "L1",
+  "model": "doubao-seedream-5-0-260128",
+  "prompt": "Create an eye-level scene. A tortoise is present, facing image-right. A horses is present. The horses sits on the left-hand side of tortoise, using tortoise's own orientation. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.",
+  "prompt_exact_match_to_official_1200": true,
+  "image_size": [
+    2048,
+    2048
+  ],
+  "all_detected": true,
+  "layout": {
+    "camera_view": "eye_level",
+    "layout_family": "single_anchor",
+    "relations": [
+      {
+        "anchor": "tortoise",
+        "target": "horses",
+        "expected": "anchor_left",
+        "predicted": [
+          "anchor_back",
+          "anchor_left",
+          "anchor_up"
+        ],
+        "ok": true
+      }
+    ]
+  },
+  "detections": {
+    "tortoise": {
+      "source": "owl",
+      "score": 0.8528370261192322,
+      "box_xyxy": [
+        1013.19140625,
+        943.295654296875,
+        1737.60498046875,
+        1280.768310546875
+      ]
+    },
+    "horses": {
+      "source": "owl",
+      "score": 0.06711772084236145,
+      "box_xyxy": [
+        312.1605529785156,
+        628.8869018554688,
+        981.58544921875,
+        1284.481689453125
+      ]
+    }
+  },
+  "sam": {
+    "role": "fallback for labels missed by OWL-ViT",
+    "triggered": false,
+    "detections": {},
+    "mask_note": "SAM fallback was not invoked because OWL-ViT detected every required label."
+  },
+  "depth": {
+    "is_metric": true,
+    "scale_factor": 14.48736572265625,
+    "shape": [
+      2048,
+      2048
+    ],
+    "dtype": "float32",
+    "visualization_p02": 7.486273765563965,
+    "visualization_p98": 27.52000606536865,
+    "object_depths": {
+      "tortoise": {
+        "center": [
+          1375.398193359375,
+          1112.031982421875
+        ],
+        "center_depth": 10.819435119628906,
+        "depth_min": 10.732277870178223,
+        "depth_max": 13.591707229614258,
+        "depth_mean": 11.296895980834961,
+        "depth_median": 10.971728324890137,
+        "valid_depth_pixels": 245050
+      },
+      "horses": {
+        "center": [
+          646.8730010986328,
+          956.6842956542969
+        ],
+        "center_depth": 11.013498306274414,
+        "depth_min": 10.681262016296387,
+        "depth_max": 17.230684280395508,
+        "depth_mean": 12.435921669006348,
+        "depth_median": 11.155755996704102,
+        "valid_depth_pixels": 440190
+      }
+    }
+  }
+}

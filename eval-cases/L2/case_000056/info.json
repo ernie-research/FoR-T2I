@@ -1,0 +1,140 @@
+{
+  "id": "FoR-T2I-v1-000056",
+  "source_generation_id": "SFB-calibrated-layout-000056",
+  "level": "L2",
+  "model": "doubao-seedream-5-0-260128",
+  "prompt": "Create an eye-level scene. A hedgehog is present, facing away from the viewer. A cow is present. The cow sits on the forward side of hedgehog, using hedgehog's own orientation. A cat is present. A cat is placed in the foreground, closer to the viewer, using the image frame. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.",
+  "prompt_exact_match_to_official_1200": true,
+  "image_size": [
+    2048,
+    2048
+  ],
+  "all_detected": true,
+  "layout": {
+    "camera_view": "eye_level",
+    "layout_family": "multi_relation",
+    "relations": [
+      {
+        "anchor": "hedgehog",
+        "target": "cow",
+        "expected": "anchor_front",
+        "predicted": [
+          "anchor_front",
+          "anchor_right",
+          "anchor_up"
+        ],
+        "ok": true
+      },
+      {
+        "anchor": "hedgehog",
+        "target": "cat",
+        "expected": [
+          "foreground"
+        ],
+        "predicted": [
+          "anchor_back",
+          "anchor_left",
+          "anchor_up"
+        ],
+        "ok": true
+      }
+    ]
+  },
+  "detections": {
+    "hedgehog": {
+      "source": "owl",
+      "score": 0.49792900681495667,
+      "box_xyxy": [
+        823.9176025390625,
+        975.5914306640625,
+        1246.2779541015625,
+        1508.6605224609375
+      ]
+    },
+    "cow": {
+      "source": "sam",
+      "score": 0.921951174736023,
+      "box_xyxy": [
+        1135.0,
+        683.0,
+        1723.0,
+        1383.0
+      ]
+    },
+    "cat": {
+      "source": "owl",
+      "score": 0.22209832072257996,
+      "box_xyxy": [
+        263.4246826171875,
+        714.6163330078125,
+        822.12451171875,
+        1665.2584228515625
+      ]
+    }
+  },
+  "sam": {
+    "role": "fallback for labels missed by OWL-ViT",
+    "triggered": true,
+    "detections": {
+      "cow": {
+        "score": 0.921951174736023,
+        "box_xyxy": [
+          1135.0,
+          683.0,
+          1723.0,
+          1383.0
+        ]
+      }
+    },
+    "mask_note": "The running service's optional mask-RLE endpoint returned HTTP 500; no mask is fabricated."
+  },
+  "depth": {
+    "is_metric": true,
+    "scale_factor": 4.757009506225586,
+    "shape": [
+      2048,
+      2048
+    ],
+    "dtype": "float32",
+    "visualization_p02": 3.0314265298843384,
+    "visualization_p98": 7.130911827087402,
+    "object_depths": {
+      "hedgehog": {
+        "center": [
+          1035.0977783203125,
+          1242.1259765625
+        ],
+        "center_depth": 4.619771480560303,
+        "depth_min": 4.613996505737305,
+        "depth_max": 7.2375168800354,
+        "depth_mean": 5.084235668182373,
+        "depth_median": 4.693293571472168,
+        "valid_depth_pixels": 226416
+      },
+      "cow": {
+        "center": [
+          1429.0,
+          1033.0
+        ],
+        "center_depth": 5.640021800994873,
+        "depth_min": 4.629593372344971,
+        "depth_max": 8.01574420928955,
+        "depth_mean": 6.039773464202881,
+        "depth_median": 5.716131210327148,
+        "valid_depth_pixels": 411600
+      },
+      "cat": {
+        "center": [
+          542.7745971679688,
+          1189.9373779296875
+        ],
+        "center_depth": 4.026228427886963,
+        "depth_min": 3.902461051940918,
+        "depth_max": 7.582626819610596,
+        "depth_mean": 4.861817836761475,
+        "depth_median": 4.124528884887695,
+        "valid_depth_pixels": 533120
+      }
+    }
+  }
+}

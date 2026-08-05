@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FoR-T2I</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="FoR-T2I home">
+        <img src="assets/for-t2i-title-art-bear-comic.png" alt="FoR-T2I">
+      </a>
+      <nav aria-label="Project sections">
+        <a href="#benchmark">Benchmark</a>
+        <a href="#evaluator">Evaluator</a>
+        <a href="#data">Data</a>
+        <a href="#resources">Links</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="FoR-T2I overview">
+        <div class="carousel" aria-label="Generated FoR-T2I prompt examples">
+          <div class="slide is-active">
+            <img src="assets/carousel/suv-cat-bird.png" alt="Generated top-down FoR-T2I example with SUV, cat, and bird">
+            <div class="slide-caption">
+              <span>L2 / top-down</span>
+              <strong>SUV facing left, cat above, bird on the left edge.</strong>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/carousel/cat-elephant-zebra.png" alt="Generated top-down FoR-T2I example with cat, elephant, and zebra">
+            <div class="slide-caption">
+              <span>L2 / top-down</span>
+              <strong>Cat facing image-top, elephant below, zebra on the left.</strong>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/carousel/sofa-tv-desk.png" alt="Generated top-down FoR-T2I example with sofa bed, TV, and desk">
+            <div class="slide-caption">
+              <span>L3 / top-down</span>
+              <strong>TV to the right of the sofa bed, desk below the TV.</strong>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/carousel/child-tiger-train.png" alt="Generated top-down FoR-T2I example with child, tiger, and train">
+            <div class="slide-caption">
+              <span>L3 / top-down</span>
+              <strong>Child, tiger, and train ordered left to right.</strong>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/carousel/van-woman-cat.png" alt="Generated top-down FoR-T2I example with van, woman, and cat">
+            <div class="slide-caption">
+              <span>L3 / top-down</span>
+              <strong>Woman right of van, cat above the woman.</strong>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/carousel/red-panda-polar-bear-sheep.png" alt="Generated eye-level FoR-T2I example with red panda, polar bear, and sheep">
+            <div class="slide-caption">
+              <span>L3 / eye-level</span>
+              <strong>Polar bear right of red panda, sheep closer to the viewer.</strong>
+            </div>
+          </div>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">ERNIE Team work</p>
+          <h1>
+            <img class="title-icon" src="assets/bear-painter-icon.png" alt="Bear painter icon">
+            <span>FoR-T2I</span>
+          </h1>
+          <p class="hero-subtitle">
+            Can T2I Models Draw From the Right Frame of Reference?
+          </p>
+          <div class="team-badge" aria-label="Project team">
+            <img src="assets/icons/baidu-paw.svg" alt="Baidu icon">
+            <span>Baidu ERNIE Team</span>
+          </div>
+          <div class="hero-links" aria-label="Project resource links">
+            <a class="resource-pill" href="https://huggingface.co/datasets/ernie-research/FoR-T2I">
+              <img class="resource-icon" src="assets/icons/huggingface.svg" alt="">
+              <span>Hugging Face</span>
+              <small>Dataset</small>
+            </a>
+            <a class="resource-pill" href="https://github.com/ernie-research/FoR-T2I">
+              <img class="resource-icon" src="assets/icons/github.svg" alt="">
+              <span>GitHub</span>
+              <small>Code</small>
+            </a>
+            <a class="resource-pill" href="https://arxiv.org/abs/2608.03357">
+              <img class="resource-icon" src="assets/icons/arxiv.svg" alt="">
+              <span>arXiv</span>
+              <small>Paper</small>
+            </a>
+          </div>
+        </div>
+        <div class="carousel-controls" aria-label="Carousel controls">
+          <button type="button" class="carousel-prev" aria-label="Previous example">&#8249;</button>
+          <div class="carousel-dots" aria-label="Choose example"></div>
+          <button type="button" class="carousel-next" aria-label="Next example">&#8250;</button>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Benchmark metrics">
+        <div>
+          <strong>1200</strong>
+          <span>paired prompts</span>
+        </div>
+        <div>
+          <strong>3</strong>
+          <span>difficulty levels</span>
+        </div>
+        <div>
+          <strong>256</strong>
+          <span>coordinate frame</span>
+        </div>
+        <div>
+          <strong>2</strong>
+          <span>prompt views</span>
+        </div>
+      </section>
+
+      <section id="benchmark" class="section prompt-section">
+        <div class="section-head">
+          <p class="eyebrow">Benchmark design</p>
+          <h2>Object-centered relations, camera-centered controls.</h2>
+          <p>
+            Each sample pairs a FoR prompt with a camera-frame prompt that targets the same layout. The release stores structured coordinates, relations, orientation constraints, and prompt text in one evaluation-ready JSONL.
+          </p>
+        </div>
+        <div class="prompt-grid" aria-label="Generated sample prompts">
+          <article>
+            <span>000005</span>
+            <h3>SUV / cat / bird</h3>
+            <p>Cat above the SUV, bird anchored to the left side of the image frame.</p>
+          </article>
+          <article>
+            <span>000011</span>
+            <h3>Cat / elephant / zebra</h3>
+            <p>Elephant below the cat, zebra placed on the left side of the frame.</p>
+          </article>
+          <article>
+            <span>000042</span>
+            <h3>Sofa bed / TV / desk</h3>
+            <p>TV right of the sofa bed, desk below the TV in a top-down layout.</p>
+          </article>
+          <article>
+            <span>000062</span>
+            <h3>Child / tiger / train</h3>
+            <p>Three-object chain with a clear left-to-right viewer-frame ordering.</p>
+          </article>
+          <article>
+            <span>000126</span>
+            <h3>Van / woman / cat</h3>
+            <p>Woman right of the van, cat above the woman in the image frame.</p>
+          </article>
+          <article>
+            <span>000004</span>
+            <h3>Red panda / polar bear / sheep</h3>
+            <p>Eye-level depth sample with the sheep closer than the polar bear.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="data" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Release split</p>
+          <h2>Balanced by level, explicit about camera and layout coverage.</h2>
+        </div>
+        <div class="data-grid" aria-label="Release split summary">
+          <article>
+            <strong>400</strong>
+            <span>L1 samples</span>
+          </article>
+          <article>
+            <strong>400</strong>
+            <span>L2 samples</span>
+          </article>
+          <article>
+            <strong>400</strong>
+            <span>L3 samples</span>
+          </article>
+          <article>
+            <strong>FoR + Cam</strong>
+            <span>Paired prompt views for every layout</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="evaluator" class="section evaluator">
+        <div class="section-head">
+          <p class="eyebrow">Evaluation pipeline</p>
+          <h2>Geometry first, orientation second, final paired score.</h2>
+        </div>
+        <div class="flow" aria-label="Evaluation pipeline">
+          <article>
+            <span>01</span>
+            <h3>Build Manifest</h3>
+            <p>Expand 1200 samples into FoR and Cam image rows with expected objects and relations.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Detect Objects</h3>
+            <p>Use OWL-ViT with SAM fallback to localize required entities before relation scoring.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Score Geometry</h3>
+            <p>Check left-right, top-bottom, and depth relations against the structured target layout.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Judge Orientation</h3>
+            <p>Crop anchor objects and verify facing direction with a VLM judge.</p>
+          </article>
+        </div>
+        <div class="case-visualization">
+          <div class="case-visualization-head">
+            <div>
+              <p class="eyebrow">Detected case gallery</p>
+              <h3>Nine passing cases across L1, L2, and L3.</h3>
+              <p>
+                Hover over any case to inspect union bounding boxes. Use the view controls to pin the bbox overlay, DA3 depth map, or SAM fallback view; Image resets the card.
+              </p>
+            </div>
+            <a href="eval-cases/index.html" target="_blank" rel="noreferrer">Open full view</a>
+          </div>
+          <div class="case-legend" aria-label="Detection legend">
+            <span><b class="legend-owl"></b> OWL-ViT boxes</span>
+            <span><b class="legend-sam"></b> SAM fallback boxes</span>
+            <span><b class="legend-depth"></b> DA3 depth map</span>
+          </div>
+          <div class="case-grid" id="caseGallery" aria-label="Interactive eval case gallery"></div>
+        </div>
+      </section>
+
+      <section id="resources" class="section resources">
+        <div class="section-head">
+          <p class="eyebrow">Project resources</p>
+          <h2>Released by the Baidu ERNIE Team.</h2>
+          <p>
+            The benchmark package, code, and paper links are grouped here for reviewers and downstream evaluators.
+          </p>
+        </div>
+        <div class="resource-grid" aria-label="FoR-T2I external resources">
+          <a class="resource-card" href="https://huggingface.co/datasets/ernie-research/FoR-T2I">
+            <div class="resource-card-head">
+              <img class="resource-icon" src="assets/icons/huggingface.svg" alt="">
+              <span>Dataset</span>
+            </div>
+            <strong>Hugging Face</strong>
+            <p>Download the released prompt pairs and structured metadata.</p>
+          </a>
+          <a class="resource-card" href="https://github.com/ernie-research/FoR-T2I">
+            <div class="resource-card-head">
+              <img class="resource-icon" src="assets/icons/github.svg" alt="">
+              <span>Code</span>
+            </div>
+            <strong>GitHub</strong>
+            <p>Use the benchmark package and evaluation scripts.</p>
+          </a>
+          <a class="resource-card" href="https://arxiv.org/abs/2608.03357">
+            <div class="resource-card-head">
+              <img class="resource-icon" src="assets/icons/arxiv.svg" alt="">
+              <span>Paper</span>
+            </div>
+            <strong>arXiv</strong>
+            <p>Read the paper and benchmark details.</p>
+          </a>
+        </div>
+      </section>
+    </main>
+    <script>
+      const slides = Array.from(document.querySelectorAll(".slide"));
+      const dotsContainer = document.querySelector(".carousel-dots");
+      const prevButton = document.querySelector(".carousel-prev");
+      const nextButton = document.querySelector(".carousel-next");
+      let activeSlide = 0;
+      let timer;
+
+      const dots = slides.map((_, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Show example ${index + 1}`);
+        dot.addEventListener("click", () => showSlide(index, true));
+        dotsContainer.appendChild(dot);
+        return dot;
+      });
+
+      function showSlide(index, userAction = false) {
+        activeSlide = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("is-active", slideIndex === activeSlide);
+        });
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle("is-active", dotIndex === activeSlide);
+        });
+        if (userAction) {
+          restartTimer();
+        }
+      }
+
+      function restartTimer() {
+        window.clearInterval(timer);
+        timer = window.setInterval(() => showSlide(activeSlide + 1), 5200);
+      }
+
+      prevButton.addEventListener("click", () => showSlide(activeSlide - 1, true));
+      nextButton.addEventListener("click", () => showSlide(activeSlide + 1, true));
+      showSlide(0);
+      restartTimer();
+
+      const evalCases = [
+        {
+          level: "L1",
+          caseId: "000565",
+          title: "Helicopter / vendor",
+          folder: "eval-cases/L1/case_000565",
+          layout: "eye-level single-anchor",
+          relation: "vendor vs helicopter: anchor_front",
+          hasSam: true
+        },
+        {
+          level: "L1",
+          caseId: "000410",
+          title: "Tortoise / horses",
+          folder: "eval-cases/L1/case_000410",
+          layout: "eye-level single-anchor",
+          relation: "horses vs tortoise: anchor_left",
+          hasSam: false
+        },
+        {
+          level: "L1",
+          caseId: "000769",
+          title: "Small vehicle / cat",
+          folder: "eval-cases/L1/case_000769",
+          layout: "eye-level single-anchor",
+          relation: "cat vs small vehicle: anchor_back",
+          hasSam: false
+        },
+        {
+          level: "L2",
+          caseId: "000056",
+          title: "Hedgehog / cow / cat",
+          folder: "eval-cases/L2/case_000056",
+          layout: "eye-level multi-relation",
+          relation: "cow: anchor_front; cat: foreground",
+          hasSam: true
+        },
+        {
+          level: "L2",
+          caseId: "000365",
+          title: "Bear / phone / horse",
+          folder: "eval-cases/L2/case_000365",
+          layout: "eye-level multi-relation",
+          relation: "phone: anchor_left; horse: background",
+          hasSam: false
+        },
+        {
+          level: "L2",
+          caseId: "000794",
+          title: "Skunk / frog / chicken",
+          folder: "eval-cases/L2/case_000794",
+          layout: "eye-level multi-relation",
+          relation: "frog: anchor_back; chicken: image_top",
+          hasSam: false
+        },
+        {
+          level: "L3",
+          caseId: "000453",
+          title: "Shrimp / sea turtle / man",
+          folder: "eval-cases/L3/case_000453",
+          layout: "eye-level orientation-link",
+          relation: "man: anchor_front; turtle: anchor_back",
+          hasSam: true
+        },
+        {
+          level: "L3",
+          caseId: "001057",
+          title: "Brown bear / ostrich / dog",
+          folder: "eval-cases/L3/case_001057",
+          layout: "eye-level orientation-link",
+          relation: "dog: anchor_front; ostrich: anchor_left",
+          hasSam: false
+        },
+        {
+          level: "L3",
+          caseId: "001161",
+          title: "Golf cart / SUV / cow",
+          folder: "eval-cases/L3/case_001161",
+          layout: "top-down orientation-link",
+          relation: "cow: anchor_right; SUV: anchor_back",
+          hasSam: false
+        }
+      ];
+
+      const caseGallery = document.querySelector("#caseGallery");
+      const viewLabels = {
+        image: "Image",
+        bbox: "BBox",
+        depth: "Depth",
+        sam: "SAM"
+      };
+
+      function renderEvalCase(item) {
+        const card = document.createElement("article");
+        card.className = "eval-case-card";
+        card.dataset.view = "image";
+
+        const views = ["image", "bbox", "depth"];
+        if (item.hasSam) {
+          views.push("sam");
+        }
+
+        card.innerHTML = `
+          <div class="case-media">
+            <img class="case-layer" data-view="image" src="${item.folder}/image.png" alt="${item.title} generated image" loading="lazy">
+            <img class="case-layer" data-view="bbox" src="${item.folder}/bbox.jpg" alt="${item.title} bbox overlay" loading="lazy">
+            <img class="case-layer" data-view="depth" src="${item.folder}/depth.png" alt="${item.title} DA3 depth map" loading="lazy">
+            ${item.hasSam ? `<img class="case-layer" data-view="sam" src="${item.folder}/sam.jpg" alt="${item.title} SAM fallback detections" loading="lazy">` : ""}
+            <span class="case-hover-badge">Hover: BBox</span>
+          </div>
+          <div class="case-body">
+            <div class="case-kicker">
+              <span class="case-level">${item.level} / case ${item.caseId}</span>
+              <span class="case-status">ALL DETECTED</span>
+            </div>
+            <h4>${item.title}</h4>
+            <p>${item.layout}</p>
+            <p class="case-relation">${item.relation}</p>
+          </div>
+          <div class="case-controls">
+            ${views.map((view) => `<button type="button" data-view="${view}" class="${view === "image" ? "is-active" : ""}">${viewLabels[view]}</button>`).join("")}
+          </div>
+        `;
+
+        card.querySelectorAll(".case-controls button").forEach((button) => {
+          button.addEventListener("click", () => {
+            const view = button.dataset.view;
+            card.dataset.view = view;
+            card.classList.toggle("is-locked", view !== "image");
+            card.querySelectorAll(".case-controls button").forEach((target) => {
+              target.classList.toggle("is-active", target.dataset.view === view);
+            });
+          });
+        });
+
+        return card;
+      }
+
+      if (caseGallery) {
+        evalCases.forEach((item) => caseGallery.appendChild(renderEvalCase(item)));
+      }
+    </script>
+  </body>
+</html>

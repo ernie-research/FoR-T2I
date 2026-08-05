@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FoR-T2I: nine detected cases</title><style>
+*{box-sizing:border-box} body{margin:0;background:#f3f5f6;color:#20262c;font:15px/1.5 Arial,sans-serif;letter-spacing:0} header{padding:26px max(22px,calc((100vw - 1260px)/2));background:#20262c;color:white;border-bottom:5px solid #f4a261} h1{font-size:29px;margin:0} main{max-width:1260px;margin:auto;background:white} section{padding:28px;border-bottom:1px solid #d8dee4} h2{font-size:21px;margin:0 0 8px} p{margin:0;overflow-wrap:anywhere} .level{padding:22px 28px;background:#e8edf0;border-top:4px solid #168aad;border-bottom:1px solid #cbd3d9} .level h2{font-size:25px} .layout{margin-top:9px;color:#65727e;font-family:ui-monospace,monospace;font-size:13px} .head{display:flex;gap:20px;justify-content:space-between;align-items:start;margin-bottom:18px} .ok{background:#25855a;color:white;padding:5px 9px;border-radius:4px;font-size:12px;font-weight:bold;white-space:nowrap} .images{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px} figure{margin:0;border:1px solid #d8dee4;border-radius:6px;overflow:hidden} img{width:100%;height:420px;display:block;object-fit:contain;background:#eef1f2} figcaption{padding:9px 12px;border-top:1px solid #d8dee4} .owl{color:#168AAD}.sam{color:#E76F51} table{width:100%;margin-top:18px;border-collapse:collapse;table-layout:fixed;font-size:13px} th,td{padding:8px;border:1px solid #d8dee4;text-align:left;overflow-wrap:anywhere} th{background:#edf1f3} @media(max-width:760px){.images{grid-template-columns:1fr}img{height:auto}.head{display:block}.ok{display:inline-block;margin-top:12px}section{padding:20px 15px}}
+</style></head><body><header><h1>FoR-T2I: nine fully detected cases, three per level</h1></header><main><div class="level"><h2>Level 1</h2><p>Three fully detected cases with distinct layouts and usable DA3 depth.</p></div><section>
+<div class="head"><div><h2>FoR-T2I-v1-000565</h2><p>Create an eye-level scene. A helicopter is present, facing image-right. A vendor is present. The vendor sits on the forward side of helicopter, using helicopter&#x27;s own orientation. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.</p><p class="layout">eye_level | vendor vs helicopter: anchor_front | SAM fallback: True</p></div><span class="ok">ALL DETECTED</span></div>
+<div class="images">
+<figure><img src="L1/case_000565/image.png"><figcaption>Generated image</figcaption></figure>
+<figure><img src="L1/case_000565/bbox.jpg"><figcaption><b class="owl">Blue</b>: OWL-ViT &nbsp; <b class="sam">Orange</b>: SAM fallback</figcaption></figure>
+<figure><img src="L1/case_000565/sam.jpg"><figcaption>SAM3.1 fallback detections only</figcaption></figure>
+<figure><img src="L1/case_000565/depth.png"><figcaption>DA3 metric depth map</figcaption></figure>
+</div>
+<table><thead><tr><th>Object</th><th>Source</th><th>Score</th><th>BBox [x1,y1,x2,y2]</th><th>Median depth</th></tr></thead><tbody><tr><td>helicopter</td><td>owl</td><td>0.7521</td><td>[-1.68682861328125, 629.8218994140625, 1586.420166015625, 1568.8282470703125]</td><td>22.7454</td></tr><tr><td>vendor</td><td>sam</td><td>0.9220</td><td>[1279.0, 1075.0, 1560.0, 1559.0]</td><td>16.5972</td></tr></tbody></table>
+</section><section>
+<div class="head"><div><h2>FoR-T2I-v1-000410</h2><p>Create an eye-level scene. A tortoise is present, facing image-right. A horses is present. The horses sits on the left-hand side of tortoise, using tortoise&#x27;s own orientation. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.</p><p class="layout">eye_level | horses vs tortoise: anchor_left | SAM fallback: False</p></div><span class="ok">ALL DETECTED</span></div>
+<div class="images">
+<figure><img src="L1/case_000410/image.png"><figcaption>Generated image</figcaption></figure>
+<figure><img src="L1/case_000410/bbox.jpg"><figcaption><b class="owl">Blue</b>: OWL-ViT &nbsp; <b class="sam">Orange</b>: SAM fallback</figcaption></figure>
+
+<figure><img src="L1/case_000410/depth.png"><figcaption>DA3 metric depth map</figcaption></figure>
+</div>
+<table><thead><tr><th>Object</th><th>Source</th><th>Score</th><th>BBox [x1,y1,x2,y2]</th><th>Median depth</th></tr></thead><tbody><tr><td>tortoise</td><td>owl</td><td>0.8528</td><td>[1013.19140625, 943.295654296875, 1737.60498046875, 1280.768310546875]</td><td>10.9717</td></tr><tr><td>horses</td><td>owl</td><td>0.0671</td><td>[312.1605529785156, 628.8869018554688, 981.58544921875, 1284.481689453125]</td><td>11.1558</td></tr></tbody></table>
+</section><section>
+<div class="head"><div><h2>FoR-T2I-v1-000769</h2><p>Create an eye-level scene. A small vehicle is present, facing away from the viewer. A cat is present. The cat is behind small vehicle, opposite small vehicle&#x27;s own facing direction. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.</p><p class="layout">eye_level | cat vs small vehicle: anchor_back | SAM fallback: False</p></div><span class="ok">ALL DETECTED</span></div>
+<div class="images">
+<figure><img src="L1/case_000769/image.png"><figcaption>Generated image</figcaption></figure>
+<figure><img src="L1/case_000769/bbox.jpg"><figcaption><b class="owl">Blue</b>: OWL-ViT &nbsp; <b class="sam">Orange</b>: SAM fallback</figcaption></figure>
+
+<figure><img src="L1/case_000769/depth.png"><figcaption>DA3 metric depth map</figcaption></figure>
+</div>
+<table><thead><tr><th>Object</th><th>Source</th><th>Score</th><th>BBox [x1,y1,x2,y2]</th><th>Median depth</th></tr></thead><tbody><tr><td>small vehicle</td><td>owl</td><td>0.0529</td><td>[816.9669189453125, 862.3418579101562, 1422.5306396484375, 1349.3448486328125]</td><td>5.5336</td></tr><tr><td>cat</td><td>owl</td><td>0.1438</td><td>[525.7352294921875, 1103.9869384765625, 840.5181884765625, 1441.0521240234375]</td><td>4.0966</td></tr></tbody></table>
+</section><div class="level"><h2>Level 2</h2><p>Three fully detected cases with distinct layouts and usable DA3 depth.</p></div><section>
+<div class="head"><div><h2>FoR-T2I-v1-000056</h2><p>Create an eye-level scene. A hedgehog is present, facing away from the viewer. A cow is present. The cow sits on the forward side of hedgehog, using hedgehog&#x27;s own orientation. A cat is present. A cat is placed in the foreground, closer to the viewer, using the image frame. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.</p><p class="layout">eye_level | cow vs hedgehog: anchor_front; cat vs hedgehog: [&#x27;foreground&#x27;] | SAM fallback: True</p></div><span class="ok">ALL DETECTED</span></div>
+<div class="images">
+<figure><img src="L2/case_000056/image.png"><figcaption>Generated image</figcaption></figure>
+<figure><img src="L2/case_000056/bbox.jpg"><figcaption><b class="owl">Blue</b>: OWL-ViT &nbsp; <b class="sam">Orange</b>: SAM fallback</figcaption></figure>
+<figure><img src="L2/case_000056/sam.jpg"><figcaption>SAM3.1 fallback detections only</figcaption></figure>
+<figure><img src="L2/case_000056/depth.png"><figcaption>DA3 metric depth map</figcaption></figure>
+</div>
+<table><thead><tr><th>Object</th><th>Source</th><th>Score</th><th>BBox [x1,y1,x2,y2]</th><th>Median depth</th></tr></thead><tbody><tr><td>hedgehog</td><td>owl</td><td>0.4979</td><td>[823.9176025390625, 975.5914306640625, 1246.2779541015625, 1508.6605224609375]</td><td>4.6933</td></tr><tr><td>cow</td><td>sam</td><td>0.9220</td><td>[1135.0, 683.0, 1723.0, 1383.0]</td><td>5.7161</td></tr><tr><td>cat</td><td>owl</td><td>0.2221</td><td>[263.4246826171875, 714.6163330078125, 822.12451171875, 1665.2584228515625]</td><td>4.1245</td></tr></tbody></table>
+</section><section>
+<div class="head"><div><h2>FoR-T2I-v1-000365</h2><p>Create an eye-level scene. A bear is present, facing image-left. A cell phone is present. The cell phone sits on the left-hand side of bear, using bear&#x27;s own orientation. A horse is present. A horse is placed in the background, farther from the viewer, using the image frame. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.</p><p class="layout">eye_level | cell phone vs bear: anchor_left; horse vs bear: [&#x27;background&#x27;] | SAM fallback: False</p></div><span class="ok">ALL DETECTED</span></div>
+<div class="images">
+<figure><img src="L2/case_000365/image.png"><figcaption>Generated image</figcaption></figure>
+<figure><img src="L2/case_000365/bbox.jpg"><figcaption><b class="owl">Blue</b>: OWL-ViT &nbsp; <b class="sam">Orange</b>: SAM fallback</figcaption></figure>
+
+<figure><img src="L2/case_000365/depth.png"><figcaption>DA3 metric depth map</figcaption></figure>
+</div>
+<table><thead><tr><th>Object</th><th>Source</th><th>Score</th><th>BBox [x1,y1,x2,y2]</th><th>Median depth</th></tr></thead><tbody><tr><td>bear</td><td>owl</td><td>0.0279</td><td>[164.39114379882812, 912.5760498046875, 1129.541748046875, 1564.2742919921875]</td><td>8.0865</td></tr><tr><td>cell phone</td><td>owl</td><td>0.0090</td><td>[1106.3416748046875, 950.990966796875, 1442.9049072265625, 1571.0439453125]</td><td>7.8712</td></tr><tr><td>horse</td><td>owl</td><td>0.2512</td><td>[1072.0059814453125, 691.7738647460938, 1883.6348876953125, 1506.9091796875]</td><td>9.4796</td></tr></tbody></table>
+</section><section>
+<div class="head"><div><h2>FoR-T2I-v1-000794</h2><p>Create an eye-level scene. A skunk is present, facing image-right. A frog is present. The frog is behind skunk, opposite skunk&#x27;s own facing direction. A chicken is present. A chicken is placed near the top of the image, using the viewer&#x27;s image frame. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.</p><p class="layout">eye_level | frog vs skunk: anchor_back; chicken vs skunk: [&#x27;image_top&#x27;] | SAM fallback: False</p></div><span class="ok">ALL DETECTED</span></div>
+<div class="images">
+<figure><img src="L2/case_000794/image.png"><figcaption>Generated image</figcaption></figure>
+<figure><img src="L2/case_000794/bbox.jpg"><figcaption><b class="owl">Blue</b>: OWL-ViT &nbsp; <b class="sam">Orange</b>: SAM fallback</figcaption></figure>
+
+<figure><img src="L2/case_000794/depth.png"><figcaption>DA3 metric depth map</figcaption></figure>
+</div>
+<table><thead><tr><th>Object</th><th>Source</th><th>Score</th><th>BBox [x1,y1,x2,y2]</th><th>Median depth</th></tr></thead><tbody><tr><td>skunk</td><td>owl</td><td>0.3523</td><td>[683.3858642578125, 959.3890991210938, 1635.4644775390625, 1347.9493408203125]</td><td>2.9979</td></tr><tr><td>frog</td><td>owl</td><td>0.2905</td><td>[251.5096435546875, 1150.075927734375, 550.08984375, 1305.40087890625]</td><td>3.0600</td></tr><tr><td>chicken</td><td>owl</td><td>0.4668</td><td>[886.5270385742188, 309.0177307128906, 1126.6820068359375, 686.923828125]</td><td>4.5537</td></tr></tbody></table>
+</section><div class="level"><h2>Level 3</h2><p>Three fully detected cases with distinct layouts and usable DA3 depth.</p></div><section>
+<div class="head"><div><h2>FoR-T2I-v1-000453</h2><p>Create an eye-level scene. A shrimp is present, facing image-left. A sea turtle is present. The sea turtle faces the opposite direction from the shrimp. The sea turtle sits on the rear side of shrimp, using shrimp&#x27;s own orientation. A man is present. The man sits on the forward side of sea turtle, using sea turtle&#x27;s own orientation. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.</p><p class="layout">eye_level | man vs sea turtle: anchor_front; sea turtle vs shrimp: anchor_back | SAM fallback: True</p></div><span class="ok">ALL DETECTED</span></div>
+<div class="images">
+<figure><img src="L3/case_000453/image.png"><figcaption>Generated image</figcaption></figure>
+<figure><img src="L3/case_000453/bbox.jpg"><figcaption><b class="owl">Blue</b>: OWL-ViT &nbsp; <b class="sam">Orange</b>: SAM fallback</figcaption></figure>
+<figure><img src="L3/case_000453/sam.jpg"><figcaption>SAM3.1 fallback detections only</figcaption></figure>
+<figure><img src="L3/case_000453/depth.png"><figcaption>DA3 metric depth map</figcaption></figure>
+</div>
+<table><thead><tr><th>Object</th><th>Source</th><th>Score</th><th>BBox [x1,y1,x2,y2]</th><th>Median depth</th></tr></thead><tbody><tr><td>shrimp</td><td>sam</td><td>0.9179</td><td>[271.0, 974.0, 672.0, 1179.0]</td><td>4.4141</td></tr><tr><td>sea turtle</td><td>owl</td><td>0.6458</td><td>[745.946533203125, 888.3275146484375, 1371.104736328125, 1219.2076416015625]</td><td>4.8006</td></tr><tr><td>man</td><td>sam</td><td>0.9649</td><td>[1480.0, 860.0, 1741.0, 1184.0]</td><td>4.6151</td></tr></tbody></table>
+</section><section>
+<div class="head"><div><h2>FoR-T2I-v1-001057</h2><p>Create an eye-level scene. A brown bear is present, facing the viewer. A ostrich is present. The ostrich faces away from the brown bear. From brown bear&#x27;s perspective, ostrich is to its left. A dog is present. The dog sits on the forward side of ostrich, using ostrich&#x27;s own orientation. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.</p><p class="layout">eye_level | dog vs ostrich: anchor_front; ostrich vs brown bear: anchor_left | SAM fallback: False</p></div><span class="ok">ALL DETECTED</span></div>
+<div class="images">
+<figure><img src="L3/case_001057/image.png"><figcaption>Generated image</figcaption></figure>
+<figure><img src="L3/case_001057/bbox.jpg"><figcaption><b class="owl">Blue</b>: OWL-ViT &nbsp; <b class="sam">Orange</b>: SAM fallback</figcaption></figure>
+
+<figure><img src="L3/case_001057/depth.png"><figcaption>DA3 metric depth map</figcaption></figure>
+</div>
+<table><thead><tr><th>Object</th><th>Source</th><th>Score</th><th>BBox [x1,y1,x2,y2]</th><th>Median depth</th></tr></thead><tbody><tr><td>brown bear</td><td>owl</td><td>0.3264</td><td>[38.205291748046875, 737.659423828125, 805.048583984375, 1695.937744140625]</td><td>16.3127</td></tr><tr><td>ostrich</td><td>owl</td><td>0.7247</td><td>[778.80810546875, 393.85504150390625, 1458.33251953125, 1632.637939453125]</td><td>19.3719</td></tr><tr><td>dog</td><td>owl</td><td>0.1889</td><td>[1496.650634765625, 993.7987060546875, 1923.205810546875, 1683.7762451171875]</td><td>16.3263</td></tr></tbody></table>
+</section><section>
+<div class="head"><div><h2>FoR-T2I-v1-001161</h2><p>Create a top-down map. A golf cart is present, facing image-left. A suv is present. The suv faces the golf cart. The suv sits on the rear side of golf cart, using golf cart&#x27;s own orientation. A cow is present. The cow is on suv&#x27;s own right side, from suv&#x27;s perspective. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.</p><p class="layout">top_down | cow vs suv: anchor_right; suv vs golf cart: anchor_back | SAM fallback: False</p></div><span class="ok">ALL DETECTED</span></div>
+<div class="images">
+<figure><img src="L3/case_001161/image.png"><figcaption>Generated image</figcaption></figure>
+<figure><img src="L3/case_001161/bbox.jpg"><figcaption><b class="owl">Blue</b>: OWL-ViT &nbsp; <b class="sam">Orange</b>: SAM fallback</figcaption></figure>
+
+<figure><img src="L3/case_001161/depth.png"><figcaption>DA3 metric depth map</figcaption></figure>
+</div>
+<table><thead><tr><th>Object</th><th>Source</th><th>Score</th><th>BBox [x1,y1,x2,y2]</th><th>Median depth</th></tr></thead><tbody><tr><td>golf cart</td><td>owl</td><td>0.3544</td><td>[284.359375, 877.294189453125, 872.232421875, 1267.49072265625]</td><td>9.8729</td></tr><tr><td>suv</td><td>owl</td><td>0.0846</td><td>[979.8800048828125, 930.0122680664062, 1737.2081298828125, 1272.38330078125]</td><td>9.6024</td></tr><tr><td>cow</td><td>owl</td><td>0.3007</td><td>[1215.5987548828125, 691.347900390625, 1606.2537841796875, 904.9639892578125]</td><td>10.8094</td></tr></tbody></table>
+</section></main></body></html>

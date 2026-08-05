@@ -1,0 +1,145 @@
+{
+  "id": "FoR-T2I-v1-000453",
+  "source_generation_id": "SFB-calibrated-layout-000453",
+  "level": "L3",
+  "model": "doubao-seedream-5-0-260128",
+  "prompt": "Create an eye-level scene. A shrimp is present, facing image-left. A sea turtle is present. The sea turtle faces the opposite direction from the shrimp. The sea turtle sits on the rear side of shrimp, using shrimp's own orientation. A man is present. The man sits on the forward side of sea turtle, using sea turtle's own orientation. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.",
+  "prompt_exact_match_to_official_1200": true,
+  "image_size": [
+    2048,
+    2048
+  ],
+  "all_detected": true,
+  "layout": {
+    "camera_view": "eye_level",
+    "layout_family": "orientation_link",
+    "relations": [
+      {
+        "anchor": "sea turtle",
+        "target": "man",
+        "expected": "anchor_front",
+        "predicted": [
+          "anchor_front",
+          "anchor_up"
+        ],
+        "ok": true
+      },
+      {
+        "anchor": "shrimp",
+        "target": "sea turtle",
+        "expected": "anchor_back",
+        "predicted": [
+          "anchor_back",
+          "anchor_up"
+        ],
+        "ok": true
+      }
+    ]
+  },
+  "detections": {
+    "shrimp": {
+      "source": "sam",
+      "score": 0.9179486632347107,
+      "box_xyxy": [
+        271.0,
+        974.0,
+        672.0,
+        1179.0
+      ]
+    },
+    "sea turtle": {
+      "source": "owl",
+      "score": 0.6458181142807007,
+      "box_xyxy": [
+        745.946533203125,
+        888.3275146484375,
+        1371.104736328125,
+        1219.2076416015625
+      ]
+    },
+    "man": {
+      "source": "sam",
+      "score": 0.9649122953414917,
+      "box_xyxy": [
+        1480.0,
+        860.0,
+        1741.0,
+        1184.0
+      ]
+    }
+  },
+  "sam": {
+    "role": "fallback for labels missed by OWL-ViT",
+    "triggered": true,
+    "detections": {
+      "shrimp": {
+        "score": 0.9179486632347107,
+        "box_xyxy": [
+          271.0,
+          974.0,
+          672.0,
+          1179.0
+        ]
+      },
+      "man": {
+        "score": 0.9649122953414917,
+        "box_xyxy": [
+          1480.0,
+          860.0,
+          1741.0,
+          1184.0
+        ]
+      }
+    },
+    "mask_note": "The running service's optional mask-RLE endpoint returned HTTP 500; no mask is fabricated."
+  },
+  "depth": {
+    "is_metric": true,
+    "scale_factor": 3.5992534160614014,
+    "shape": [
+      2048,
+      2048
+    ],
+    "dtype": "float32",
+    "visualization_p02": 2.3394939661026,
+    "visualization_p98": 4.938457489013672,
+    "object_depths": {
+      "shrimp": {
+        "center": [
+          471.5,
+          1076.5
+        ],
+        "center_depth": 2.456808090209961,
+        "depth_min": 2.310134172439575,
+        "depth_max": 4.938457489013672,
+        "depth_mean": 3.7463881969451904,
+        "depth_median": 4.4141316413879395,
+        "valid_depth_pixels": 82205
+      },
+      "sea turtle": {
+        "center": [
+          1058.525634765625,
+          1053.767578125
+        ],
+        "center_depth": 2.148399829864502,
+        "depth_min": 2.1319265365600586,
+        "depth_max": 5.14337158203125,
+        "depth_mean": 3.7167060375213623,
+        "depth_median": 4.800602436065674,
+        "valid_depth_pixels": 208164
+      },
+      "man": {
+        "center": [
+          1610.5,
+          1022.0
+        ],
+        "center_depth": 4.938457489013672,
+        "depth_min": 2.425999641418457,
+        "depth_max": 4.938457489013672,
+        "depth_mean": 3.7570157051086426,
+        "depth_median": 4.615087509155273,
+        "valid_depth_pixels": 84564
+      }
+    }
+  }
+}

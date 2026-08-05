@@ -1,0 +1,104 @@
+{
+  "id": "FoR-T2I-v1-000565",
+  "source_generation_id": "SFB-calibrated-layout-000565",
+  "level": "L1",
+  "model": "doubao-seedream-5-0-260128",
+  "prompt": "Create an eye-level scene. A helicopter is present, facing image-right. A vendor is present. The vendor sits on the forward side of helicopter, using helicopter's own orientation. All objects are shown at a similar visual size, with small clear gaps between them so none of the objects touch.",
+  "prompt_exact_match_to_official_1200": true,
+  "image_size": [
+    2048,
+    2048
+  ],
+  "all_detected": true,
+  "layout": {
+    "camera_view": "eye_level",
+    "layout_family": "single_anchor",
+    "relations": [
+      {
+        "anchor": "helicopter",
+        "target": "vendor",
+        "expected": "anchor_front",
+        "predicted": [
+          "anchor_front",
+          "anchor_down"
+        ],
+        "ok": true
+      }
+    ]
+  },
+  "detections": {
+    "helicopter": {
+      "source": "owl",
+      "score": 0.7520941495895386,
+      "box_xyxy": [
+        -1.68682861328125,
+        629.8218994140625,
+        1586.420166015625,
+        1568.8282470703125
+      ]
+    },
+    "vendor": {
+      "source": "sam",
+      "score": 0.921951174736023,
+      "box_xyxy": [
+        1279.0,
+        1075.0,
+        1560.0,
+        1559.0
+      ]
+    }
+  },
+  "sam": {
+    "role": "fallback for labels missed by OWL-ViT",
+    "triggered": true,
+    "detections": {
+      "vendor": {
+        "score": 0.921951174736023,
+        "box_xyxy": [
+          1279.0,
+          1075.0,
+          1560.0,
+          1559.0
+        ]
+      }
+    },
+    "mask_note": "The running service's optional mask-RLE endpoint returned HTTP 500; no mask is fabricated."
+  },
+  "depth": {
+    "is_metric": true,
+    "scale_factor": 13.95070743560791,
+    "shape": [
+      2048,
+      2048
+    ],
+    "dtype": "float32",
+    "visualization_p02": 8.330018157958984,
+    "visualization_p98": 22.745399475097656,
+    "object_depths": {
+      "helicopter": {
+        "center": [
+          792.3666687011719,
+          1099.3250732421875
+        ],
+        "center_depth": 16.41543197631836,
+        "depth_min": 15.475953102111816,
+        "depth_max": 26.659887313842773,
+        "depth_mean": 20.65679931640625,
+        "depth_median": 22.745399475097656,
+        "valid_depth_pixels": 1491780
+      },
+      "vendor": {
+        "center": [
+          1419.5,
+          1317.0
+        ],
+        "center_depth": 16.12960433959961,
+        "depth_min": 15.700933456420898,
+        "depth_max": 24.59588050842285,
+        "depth_mean": 18.967235565185547,
+        "depth_median": 16.59719467163086,
+        "valid_depth_pixels": 136004
+      }
+    }
+  }
+}
